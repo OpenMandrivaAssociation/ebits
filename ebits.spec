@@ -19,7 +19,7 @@ URL: http://www.enlightenment.org/efm.html
 Source: %{name}-%{cvsrel}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: evas-devel, edb-devel, freetype2-devel
-Buildrequires: MesaGLU-devel XFree86-devel jpeg-devel
+Buildrequires: MesaGLU-devel X11-devel jpeg-devel
 
 %description
 The Ebits library provides layout functionality for 
