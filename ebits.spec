@@ -1,22 +1,22 @@
 %define	name	ebits
 %define	version	0.0.2
-%define release 0.%{cvsrel}.%{rel}
-%define rel %mkrel 7
+%define rel 0.%{cvsrel}.8
 
 %define cvsrel 20030730
 
 %define major 1
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: Enlightened Canvas Image Bit Library
 Name: %{name}
 Version: %{version}
-Release: %{release}
+Release: %mkrel %rel
 License: BSD
 Group: Development/Other
 URL: http://www.enlightenment.org/efm.html
 Source: %{name}-%{cvsrel}.tar.bz2
+Patch: ebits-use-pkgconfig.patch
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: evas-devel, edb-devel, freetype2-devel
 Buildrequires: MesaGLU-devel X11-devel jpeg-devel
@@ -47,27 +47,23 @@ Summary: Enlightened Image Bits Canvas Library headers and development libraries
 Group: Development/Other
 Requires: %{libname} = %{version}-%{release}
 Provides: lib%{name}-devel = %{version}
+Obsoletes: %mklibname -d ebits 1
 
 %description -n %{libnamedev}
 Ebits development files.
 
 %prep
 %setup -q -n %name
+%patch -p0
 
 %build
-if [ -e ./configure ]
-then
-  %configure
-else
-  ./autogen.sh --prefix=%{_prefix}
-  %configure
-fi
-
+NOCONFIGURE=1  ./autogen.sh
+%configure2_5x
 %make
 
 %install
-
-%makeinstall
+rm -fr %buildroot
+%makeinstall_std
 
 %multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/ebits-config
 
