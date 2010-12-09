@@ -1,6 +1,6 @@
 %define	name	ebits
 %define	version	0.0.2
-%define rel 0.%{cvsrel}.10
+%define rel 0.%{cvsrel}.11
 
 %define cvsrel 20030730
 
