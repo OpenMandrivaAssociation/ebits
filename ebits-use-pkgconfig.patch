@@ -1,0 +1,34 @@
+--- configure.in~	2003-01-14 20:10:33.000000000 +0100
++++ configure.in	2008-06-01 15:56:32.000000000 +0200
+@@ -15,10 +15,10 @@
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+ 
+-evas_cflags=`evas-config --cflags`
+-evas_libs=`evas-config --libs`
+-edb_cflags=`edb-config --cflags`
+-edb_libs=`edb-config --libs`
++evas_cflags=`pkg-config evas --cflags`
++evas_libs=`pkg-config evas --libs`
++edb_cflags=`pkg-config edb --cflags`
++edb_libs=`pkg-config edb --libs`
+ AC_SUBST(evas_cflags)
+ AC_SUBST(evas_libs)
+ AC_SUBST(edb_cflags)
+--- configure.ac~	2003-01-14 20:10:29.000000000 +0100
++++ configure.ac	2008-06-01 16:06:15.000000000 +0200
+@@ -15,10 +15,10 @@
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+ 
+-evas_cflags=`evas-config --cflags`
+-evas_libs=`evas-config --libs`
+-edb_cflags=`edb-config --cflags`
+-edb_libs=`edb-config --libs`
++evas_cflags=`pkg-config evas --cflags`
++evas_libs=`pkg-config evas --libs`
++edb_cflags=`pkg-config edb --cflags`
++edb_libs=`pkg-config edb --libs`
+ AC_SUBST(evas_cflags)
+ AC_SUBST(evas_libs)
+ AC_SUBST(edb_cflags)
