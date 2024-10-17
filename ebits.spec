@@ -14,7 +14,7 @@ Version: %{version}
 Release: %mkrel %rel
 License: BSD
 Group: Development/Other
-URL: http://www.enlightenment.org/efm.html
+URL: https://www.enlightenment.org/efm.html
 Source: %{name}-%{cvsrel}.tar.bz2
 Patch: ebits-use-pkgconfig.patch
 BuildRoot: %{_tmppath}/%{name}-buildroot
