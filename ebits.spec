@@ -18,6 +18,11 @@ URL: https://www.enlightenment.org/efm.html
 Source: %{name}-%{cvsrel}.tar.bz2
 Patch: ebits-use-pkgconfig.patch
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: evas-devel, edb-devel, freetype2-devel
 Buildrequires: MesaGLU-devel X11-devel jpeg-devel
 
