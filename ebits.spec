@@ -11,7 +11,7 @@
 Summary: Enlightened Canvas Image Bit Library
 Name: %{name}
 Version: %{version}
-Release: %mkrel %rel
+Release: %rel.1
 License: BSD
 Group: Development/Other
 URL: https://www.enlightenment.org/efm.html
